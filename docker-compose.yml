@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  web:
+    container_name: django_web
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: gunicorn core.wsgi:application --bind 0.0.0.0:8000 --workers=4
+    security_opt:
+      - seccomp:unconfined
+    volumes:
+      - ./static:/home/app/web/static
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"

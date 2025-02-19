@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cbekoder Space</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="banner">You can zoom in and click and drag to explore the scene.</div>
+<a href="https://t.me/cbekoder" class="btn btn-left" target="_blank">Say "Hi 👋"</a>
+<button class="btn btn-right" id="fullscreenBtn">Go Fullscreen</button>
+<div class="webgl"></div>
+
+<script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.161.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.161.0/examples/jsm/"
+      }
+    }
+</script>
+<!-- partial -->
+<script type="module" src="{% static 'script.js' %}"></script>
+
+</body>
+</html>
